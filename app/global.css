@@ -1,0 +1,26 @@
+:root {
+	--page-padding: 20px;
+
+	--color-pure-white: #ffffff;
+	--color-pure-black: #000000;
+	--color-black: #141521;
+	--color-gray-1: #eee;
+	--color-red: #a10b25;
+	--color-yellow: #f6f588;
+
+	--color-primary: var(--color-red);
+	--color-secondary: var(--color-yellow);
+}
+
+html {
+	box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+main {
+	padding: var(--page-padding);
+}

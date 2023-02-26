@@ -1,0 +1,7 @@
+.image {
+	position: relative;
+	background: var(--color-gray-1);
+	border-radius: 6px;
+	width: 100%;
+	aspect-ratio: 1 / 1;
+}

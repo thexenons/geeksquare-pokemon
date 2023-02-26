@@ -1,0 +1,16 @@
+.link {
+	display: block;
+	text-decoration: none;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	transition: transform 0.3s;
+	cursor: pointer;
+}
+
+.wrapper:hover {
+	transform: scale(1.1);
+}

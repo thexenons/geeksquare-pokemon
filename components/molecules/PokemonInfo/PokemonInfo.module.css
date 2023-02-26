@@ -1,0 +1,32 @@
+.wrapper {
+	background-color: var(--color-pure-black);
+	color: var(--color-pure-white);
+	padding: 24px 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 22px;
+	border-radius: 6px;
+}
+
+.title {
+	font-size: 18px;
+	line-height: 22px;
+	font-weight: 500;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.row {
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: 600;
+}
+
+.row span {
+	color: var(--color-secondary);
+	font-weight: 500;
+}

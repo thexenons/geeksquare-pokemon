@@ -1,0 +1,18 @@
+.wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 24px;
+}
+
+.wrapper > * {
+	flex: 1 1 300px;
+	max-width: 575px;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	gap: 28px;
+	max-width: 388px;
+}
