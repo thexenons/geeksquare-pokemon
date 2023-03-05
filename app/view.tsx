@@ -1,7 +1,6 @@
 "use client";
 
-import type { FC } from "react";
-import { useMemo } from "react";
+import { FC, useCallback, useMemo, useRef } from "react";
 import type { HomePageProps } from "./types";
 
 import PokemonsList from "@/components/organisms/PokemonsList";
@@ -48,12 +47,22 @@ const HomePage: FC<HomePageProps> = (props) => {
 		[data?.pages]
 	);
 
+	const fetchCallLock = useRef(false);
+	const loadMore = useCallback(() => {
+		console.log("loadMore");
+		if (hasNextPage && !fetchCallLock.current) {
+			console.log("loadMore: fetchNextPage init");
+			fetchCallLock.current = true;
+			fetchNextPage().finally(() => {
+				fetchCallLock.current = false;
+				console.log("loadMore: fetchNextPage finally");
+			});
+		}
+	}, [fetchNextPage, hasNextPage]);
+
 	return (
 		<Container>
-			<PokemonsList
-				pokemons={accumulatedPokemons}
-				loadMore={hasNextPage ? fetchNextPage : undefined}
-			/>
+			<PokemonsList pokemons={accumulatedPokemons} loadMore={loadMore} />
 		</Container>
 	);
 };
